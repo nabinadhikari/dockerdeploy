@@ -9,6 +9,16 @@ services:
     networks:
       - app-network
 
+  mongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=rootpassword
+
   proxy:
     image: nginx:alpine
     container_name: web-proxy
@@ -25,3 +35,5 @@ services:
 networks:
   app-network:
     driver: bridge
+volumes:
+  mongodb_data_container:
