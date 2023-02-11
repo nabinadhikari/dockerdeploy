@@ -5,13 +5,13 @@ services:
     build: .
     image: sample-node-api
     container_name: sample-node-api
-    restart: unless-stopped
-    depends_on:
-      - mongodb
+    restart: always
+    links:
+      - mongo
     networks:
       - app-network
 
-  mongodb:
+  mongo:
     image: mongo:latest
     ports:
       - 27017:27017
