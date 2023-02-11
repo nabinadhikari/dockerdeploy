@@ -6,6 +6,8 @@ services:
     image: sample-node-api
     container_name: sample-node-api
     restart: unless-stopped
+    depends_on:
+      - mongodb
     networks:
       - app-network
 
