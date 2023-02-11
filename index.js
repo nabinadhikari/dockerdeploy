@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const uuid = require("uuid");
 
 const mongoDB =
-  "mongodb://root:rootpassword@localhost:27017/?authMechanism=DEFAULT";
+  "mongodb://root:rootpassword@mongodb:27017/?authMechanism=DEFAULT";
 
 const app = express();
 
